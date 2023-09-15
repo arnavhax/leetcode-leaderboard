@@ -21,8 +21,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+     position: relative;
   }
-  
+  body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
   main {
     width: 40rem;
     height: 43rem;
@@ -259,6 +264,17 @@
           </tr>
           {%endfor%}
         </table>
+      </div>
+      <div style=" position: absolute;
+  bottom: 0;
+  width: 20%;
+  height: 0px;">
+        <footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);">
+    © 2023 Copyright:
+    <a class="text-dark" href="https://www.linkedin.com/in/arnavbal">Arnav Balpande</a>
+  </div>
+</footer>
       </div>
     </main>
   </body>
