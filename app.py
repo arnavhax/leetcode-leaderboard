@@ -27,18 +27,21 @@ def makeParticipants(profileLinks):
         'mr-[5px] text-base font-medium leading-[20px] text-label-1 dark:text-dark-label-1'
     )
     for i in range(len(questions)):
-      if (i == 0):
-        score += int(questions[i].text)
-      if (i == 1):
-        score += int(questions[i].text) * 3
-      if (i == 2):
-        score += int(questions[i].text) * 5
+      if(questions[i] is not None):
+        if (i == 0):
+          score += int(questions[i].text)
+        if (i == 1):
+          score += int(questions[i].text) * 3
+        if (i == 2):
+          score += int(questions[i].text) * 5
     entity['score'] = score
-    entity['username'] = soup.find(
+    un = soup.find(
         'div',
         class_=
         'text-label-1 dark:text-dark-label-1 break-all text-base font-semibold'
-    ).text
+    )
+    if(un is not None):
+      entity['username']=un.text
     participants.append(entity)
   return participants
 
