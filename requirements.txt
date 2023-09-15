@@ -1,4 +1,4 @@
 Flask
 gunicorn
-BeautifulSoup
+bs4
 requests
