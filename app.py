@@ -8,7 +8,8 @@ profileLinks = [
     "https://leetcode.com/dulhaniaa/", "https://leetcode.com/yuvrajzanwar/",
     "https://leetcode.com/shrivastavapa/",
     "https://leetcode.com/prathameshratthe/",
-    "https://leetcode.com/jatinbaheti/"
+    "https://leetcode.com/jatinbaheti/",
+    "https://leetcode.com/Priyanshi_0912/", "https://leetcode.com/aalok2025/"
 ]
 
 
@@ -27,7 +28,7 @@ def makeParticipants(profileLinks):
         'mr-[5px] text-base font-medium leading-[20px] text-label-1 dark:text-dark-label-1'
     )
     for i in range(len(questions)):
-      if(questions[i] is not None):
+      if (questions[i] is not None):
         if (i == 0):
           score += int(questions[i].text)
         if (i == 1):
@@ -40,8 +41,8 @@ def makeParticipants(profileLinks):
         class_=
         'text-label-1 dark:text-dark-label-1 break-all text-base font-semibold'
     )
-    if(un is not None):
-      entity['username']=un.text
+    if (un is not None):
+      entity['username'] = un.text
     participants.append(entity)
   return participants
 
