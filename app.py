@@ -7,13 +7,13 @@ participants = [
         'id': 1,
         'name': "Arnav Balpande",
         'rank': 1,
-        'score':50,
+        'score': 100,
     },
     {
         'id': 2,
         'name': "Riya Kashikar",
         'rank': 2,
-        'score':10,
+        'score': 10,
     },
 ]
 
