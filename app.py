@@ -3,29 +3,42 @@ import requests
 from bs4 import BeautifulSoup
 
 profileLinks = [
-    "https://leetcode.com/arnavhax/", "https://leetcode.com/Anirudha_Shekdar/"
+    "https://leetcode.com/arnavhax/", "https://leetcode.com/Anirudha_Shekdar/",
+    "https://leetcode.com/BeNeatCo/", "https://leetcode.com/hazsyl1/",
+    "https://leetcode.com/dulhaniaa/", "https://leetcode.com/yuvrajzanwar/",
+    "https://leetcode.com/shrivastavapa/",
+    "https://leetcode.com/prathameshratthe/",
+    "https://leetcode.com/jatinbaheti/"
 ]
 
 
 def makeParticipants(profileLinks):
   participants = []
   for k in profileLinks:
-    entity={}
-    username=''
-    score=0
+    entity = {}
+    username = ''
+    score = 0
     response = requests.get(k)
     soup = BeautifulSoup(response.content, "html.parser")
     entity = {}
-    questions=soup.findAll('span',class_='mr-[5px] text-base font-medium leading-[20px] text-label-1 dark:text-dark-label-1')
+    questions = soup.findAll(
+        'span',
+        class_=
+        'mr-[5px] text-base font-medium leading-[20px] text-label-1 dark:text-dark-label-1'
+    )
     for i in range(len(questions)):
-        if(i==0):
-            score+=int(questions[i].text)
-        if(i==1):
-            score+=int(questions[i].text)*3
-        if(i==2):
-            score+=int(questions[i].text)*5
-    entity['score']=score
-    entity['username']=soup.find('div',class_='text-label-1 dark:text-dark-label-1 break-all text-base font-semibold').text
+      if (i == 0):
+        score += int(questions[i].text)
+      if (i == 1):
+        score += int(questions[i].text) * 3
+      if (i == 2):
+        score += int(questions[i].text) * 5
+    entity['score'] = score
+    entity['username'] = soup.find(
+        'div',
+        class_=
+        'text-label-1 dark:text-dark-label-1 break-all text-base font-semibold'
+    ).text
     participants.append(entity)
   return participants
 
@@ -36,7 +49,9 @@ app = Flask(__name__)
 @app.route('/')
 def home():
   return render_template('home.html',
-                         participants=sorted(makeParticipants(profileLinks),key=lambda i:i['score'],reverse=True))
+                         participants=sorted(makeParticipants(profileLinks),
+                                             key=lambda i: i['score'],
+                                             reverse=True))
 
 
 if __name__ == "__main__":

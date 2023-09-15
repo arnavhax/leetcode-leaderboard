@@ -39,7 +39,21 @@
     align-items: center;
     border-radius: 0.5rem;
   }
-  
+  #page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
   #header {
     width: 100%;
     display: flex;
@@ -245,11 +259,16 @@
   <body>
     <main>
       <div id="header">
-        <h1>CyberSecurity 25 Leetcode Leaderboard</h1>
+        <h1>CyberSecurity Leetcode Leaderboard</h1>
       </div>
       <div id="leaderboard">
         <div class="ribbon"></div>
         <table>
+          <tr>
+            <td class="number"></td>
+            <td class="name">Username</td>
+            <td class="points">Score</td>
+          </tr>
           <tr>
             <td class="number">1</td>
             <td class="name">{{participants[0]['username']}}</td>
@@ -264,17 +283,6 @@
           </tr>
           {%endfor%}
         </table>
-      </div>
-      <div style=" position: absolute;
-  bottom: 0;
-  width: 20%;
-  height: 0px;">
-        <footer class="bg-light text-center text-lg-start">
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);">
-    © 2023 Copyright:
-    <a class="text-dark" href="https://www.linkedin.com/in/arnavbal">Arnav Balpande</a>
-  </div>
-</footer>
       </div>
     </main>
   </body>
