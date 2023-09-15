@@ -9,7 +9,7 @@ profileLinks = [
     "shrivastavapa",
     "prathameshratthe",
     "jatinbaheti",
-    "Priyanshi_0912","aalok2025"
+    "Priyanshi_0912","aalok2025","VedantM2204"
 ]
 
 
