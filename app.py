@@ -14,7 +14,7 @@ profileLinks = [
   "VedantM2204",
   "krdande2",
   "Kartik_V",
-"sujalagrawal1885","yashwankhade9025","Feuna"
+"sujalagrawal1885","yashwankhade9025","Feuna","Veda_123k","dekateaj1"
 ]
 
 
